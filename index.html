@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>hızen.vc - intelligence for private capital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  <style>
+    body{margin:0;background:#050505;color:#f4f3f0;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:#f4f3f0}a:hover{color:#b5b2a8}
+    ::selection{background:#f4f3f0;color:#12120f}
+    @keyframes hzblink{0%,55%{opacity:1}56%,100%{opacity:0}}
+    @media (prefers-reduced-motion: reduce){*{animation:none !important}}
+  </style>
+</helmet>
+<div id="basebg" style="position:fixed;inset:0;overflow:hidden"><div id="baseimg" style="position:absolute;top:0;left:0;width:300vw;height:100%;display:flex;will-change:transform"><div style="width:100vw;height:100%;flex:0 0 auto;background-image:url('img/terrain-1.webp');background-size:cover;background-position:center;background-repeat:no-repeat"></div><div style="width:100vw;height:100%;flex:0 0 auto;background-image:url('img/terrain-1.webp');background-size:cover;background-position:center;background-repeat:no-repeat;transform:scaleX(-1)"></div><div style="width:100vw;height:100%;flex:0 0 auto;background-image:url('img/terrain-1.webp');background-size:cover;background-position:center;background-repeat:no-repeat"></div></div></div>
+<div id="spot" style="position:fixed;inset:0;pointer-events:none;overflow:hidden;-webkit-mask-image:radial-gradient(circle 260px at -999px -999px, black, transparent);mask-image:radial-gradient(circle 260px at -999px -999px, black, transparent)"><div id="spotimg" style="position:absolute;top:0;left:0;width:300vw;height:100%;display:flex;will-change:transform"><div style="width:100vw;height:100%;flex:0 0 auto;background-image:url('img/terrain-2.webp');background-size:cover;background-position:center;background-repeat:no-repeat"></div><div style="width:100vw;height:100%;flex:0 0 auto;background-image:url('img/terrain-2.webp');background-size:cover;background-position:center;background-repeat:no-repeat;transform:scaleX(-1)"></div><div style="width:100vw;height:100%;flex:0 0 auto;background-image:url('img/terrain-2.webp');background-size:cover;background-position:center;background-repeat:no-repeat"></div></div></div>
+<div id="scrim" style="position:fixed;left:0;right:0;bottom:0;height:36vh;pointer-events:none;background:linear-gradient(to top, rgba(3,3,3,0.72), rgba(3,3,3,0.35) 45%, transparent)"></div>
+<header style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:24px 7vw;pointer-events:none">
+  <a href="#" id="logo" style="pointer-events:auto;font-family:'Space Grotesk',Inter,sans-serif;font-weight:500;font-size:20px;letter-spacing:0.005em;color:#f4f3f0;text-decoration:none;line-height:1">h<span style="position:relative;display:inline-block">ı<span style="position:absolute;left:50%;top:0.06em;transform:translateX(-50%);width:0.17em;height:0.17em;border-radius:50%;background:#8f8c85"></span></span>zen<span style="color:#8f8c85">.vc</span></a>
+  <nav style="display:flex;align-items:center;gap:28px;pointer-events:auto">
+    <a href="mailto:hq@hizen.vc" class="clink" style="font-family:Inter,sans-serif;font-weight:500;font-size:12px;letter-spacing:0.05em;color:#f4f3f0;text-decoration:none;border-bottom:1px solid rgba(244,243,240,0.35);padding-bottom:3px;white-space:nowrap" style-hover="color:#b5b2a8">hq@hizen.vc</a>
+    <a href="./demo.html" class="cbtn" style="font-family:Inter,sans-serif;font-weight:500;font-size:12px;letter-spacing:0.05em;color:#12120f;background:#f4f3f0;padding:10px 20px;border-radius:999px;text-decoration:none;white-space:nowrap" style-hover="background:#d9d6cd;color:#12120f">See demo</a>
+  </nav>
+</header>
+<div id="film" style="position:relative;height:520vh">
+  <div id="stage" style="position:sticky;top:0;height:100vh;overflow:hidden">
+    <div id="track" style="display:flex;height:100vh;width:600vw;will-change:transform">
+
+      <section class="beat" data-screen-label="01 Manifesto" data-in="0" data-peak="0" data-out="0.1" style="position:relative;width:100vw;height:100vh;flex:0 0 auto;overflow:hidden">
+        <div class="stmt" style="position:absolute;top:14%;left:0;right:0;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 5vw;pointer-events:none">
+          <span class="rv" style="display:block;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(34px,4.6vw,78px);line-height:0.98;letter-spacing:-0.05em;color:#ffffff">Private capital quietly decides</span>
+          <span class="rv" style="display:block;font-family:Inter,sans-serif;font-weight:400;font-size:clamp(34px,4.6vw,78px);line-height:0.95;letter-spacing:-0.08em;color:#ffffff;margin-top:2px">what the world becomes next.</span>
+        </div>
+        <div class="rv" style="position:absolute;bottom:58px;left:7vw;max-width:390px;z-index:2">
+          <div class="lbl" style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(244,243,240,0.62);margin-bottom:10px;text-shadow:0 1px 10px rgba(0,0,0,0.6)">Private markets</div>
+          <p style="margin:0;font-family:Inter,sans-serif;font-weight:400;font-size:18px;line-height:1.7;color:rgba(244,243,240,0.97);text-shadow:0 1px 14px rgba(0,0,0,0.6)">Every era's defining companies, every fortune of consequence, every technology that reshaped a decade - private capital is where the century gets decided.</p>
+        </div>
+      </section>
+
+      <section class="beat" data-screen-label="02 The scale" data-in="0.1" data-peak="0.2" data-out="0.3" style="position:relative;width:100vw;height:100vh;flex:0 0 auto;overflow:hidden">
+        <div class="stmt" style="position:absolute;top:14%;left:0;right:0;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 5vw;pointer-events:none">
+          <span class="rv" style="display:block;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(34px,4.6vw,78px);line-height:0.98;letter-spacing:-0.05em;color:#ffffff">Trillions of dollars. Moving on instinct.</span>
+          <span class="rv" style="display:block;font-family:Inter,sans-serif;font-weight:400;font-size:clamp(34px,4.6vw,78px);line-height:0.95;letter-spacing:-0.08em;color:#ffffff;margin-top:2px">And the number is only growing.</span>
+        </div>
+        <div class="rv" style="position:absolute;bottom:58px;left:7vw;max-width:390px;z-index:2">
+          <div class="lbl" style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(244,243,240,0.62);margin-bottom:10px;text-shadow:0 1px 10px rgba(0,0,0,0.6)">Hizen · Intelligence for private capital</div>
+          <p style="margin:0;font-family:Inter,sans-serif;font-weight:400;font-size:18px;line-height:1.7;color:rgba(244,243,240,0.97);text-shadow:0 1px 14px rgba(0,0,0,0.6)">Private capital is the fastest-growing asset class in the world - and its sharpest edge is still the partner in the room.</p>
+        </div>
+        <div class="rv" style="position:absolute;bottom:58px;right:7vw;max-width:300px;z-index:2"><p style="margin:0;font-family:Inter,sans-serif;font-weight:400;font-size:14.5px;line-height:1.7;color:rgba(244,243,240,0.82);text-shadow:0 1px 14px rgba(0,0,0,0.6)">Machine intelligence can now automate all the operational work with speed and accuracy - and aid judgment. Hizen aims to do this.</p></div>
+      </section>
+
+      <section class="beat" data-screen-label="03 The work behind the judgment" data-in="0.3" data-peak="0.4" data-out="0.5" style="position:relative;width:100vw;height:100vh;flex:0 0 auto;overflow:hidden">
+        <div class="stmt" style="position:absolute;top:14%;left:0;right:0;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 5vw;pointer-events:none">
+          <span class="rv" style="display:block;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(34px,4.6vw,78px);line-height:0.98;letter-spacing:-0.05em;color:#ffffff">Every operation a VC runs,</span>
+          <span class="rv" style="display:block;font-family:Inter,sans-serif;font-weight:400;font-size:clamp(34px,4.6vw,78px);line-height:0.95;letter-spacing:-0.08em;color:#ffffff;margin-top:2px">automated. End to end.</span>
+        </div>
+        <div class="rv" style="position:absolute;bottom:58px;left:7vw;max-width:390px;z-index:2">
+          <div class="lbl" style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(244,243,240,0.62);margin-bottom:10px;text-shadow:0 1px 10px rgba(0,0,0,0.6)">The first move</div>
+          <p style="margin:0;font-family:Inter,sans-serif;font-weight:400;font-size:18px;line-height:1.7;color:rgba(244,243,240,0.97);text-shadow:0 1px 14px rgba(0,0,0,0.6)">Hizen is an AI analyst that works around the clock - sourcing, deal intake, founder research, diligence prep, IC prep, portfolio monitoring, LP updates. Every operation between the partner and the founder, handled.</p>
+        </div>
+        <div class="rv" style="position:absolute;bottom:58px;right:7vw;max-width:390px;z-index:2">
+          <p style="margin:0;font-family:Inter,sans-serif;font-weight:400;font-size:16px;line-height:1.7;color:rgba(244,243,240,0.94);text-shadow:0 1px 14px rgba(0,0,0,0.6)">What returns is time - for founder relationships, for helping founders build, for the creative pattern-matching only a person can do, for the call that only a partner can make.</p>
+        </div>
+      </section>
+
+      <section class="beat" data-screen-label="04 What a fund remembers" data-in="0.5" data-peak="0.6" data-out="0.7" style="position:relative;width:100vw;height:100vh;flex:0 0 auto;overflow:hidden">
+        <div class="stmt" style="position:absolute;top:14%;left:0;right:0;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 5vw;pointer-events:none">
+          <span class="rv" style="display:block;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(34px,4.6vw,78px);line-height:0.98;letter-spacing:-0.05em;color:#ffffff">A context memory, personal to the fund.</span>
+          <span class="rv" style="display:block;font-family:Inter,sans-serif;font-weight:400;font-size:clamp(34px,4.6vw,78px);line-height:0.95;letter-spacing:-0.08em;color:#ffffff;margin-top:2px">Growing every week the fund exists.</span>
+        </div>
+        <div class="rv" style="position:absolute;bottom:58px;left:7vw;max-width:390px;z-index:2">
+          <div class="lbl" style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(244,243,240,0.62);margin-bottom:10px;text-shadow:0 1px 10px rgba(0,0,0,0.6)">The second move</div>
+          <p style="margin:0;font-family:Inter,sans-serif;font-weight:400;font-size:18px;line-height:1.7;color:rgba(244,243,240,0.97);text-shadow:0 1px 14px rgba(0,0,0,0.6)">Every deal, every pass, every founder read, every reason a call went the way it did - captured into a substrate that is only yours. The fund's own history becomes the sharpest signal the fund will ever get.</p>
+        </div>
+        <div class="rv" style="position:absolute;bottom:58px;right:7vw;max-width:390px;z-index:2">
+          <p style="margin:0;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:400;font-size:15px;line-height:1.6;color:rgba(244,243,240,0.82);text-shadow:0 1px 12px rgba(0,0,0,0.6)">A decade of decisions, becoming a mind.</p>
+        </div>
+      </section>
+
+      <section class="beat" data-screen-label="05 The mind behind the mind" data-in="0.7" data-peak="0.8" data-out="0.9" style="position:relative;width:100vw;height:100vh;flex:0 0 auto;overflow:hidden">
+        <div class="stmt" style="position:absolute;top:14%;left:0;right:0;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 5vw;pointer-events:none">
+          <span class="rv" style="display:block;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(34px,4.6vw,78px);line-height:0.98;letter-spacing:-0.05em;color:#ffffff">Every partner, deciding</span>
+          <span class="rv" style="display:block;font-family:Inter,sans-serif;font-weight:400;font-size:clamp(34px,4.6vw,78px);line-height:0.95;letter-spacing:-0.08em;color:#ffffff;margin-top:2px">with the memory of the entire fund.</span>
+        </div>
+        <div class="rv" style="position:absolute;bottom:58px;left:7vw;max-width:390px;z-index:2">
+          <div class="lbl" style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(244,243,240,0.62);margin-bottom:10px;text-shadow:0 1px 10px rgba(0,0,0,0.6)">The vision</div>
+          <p style="margin:0;font-family:Inter,sans-serif;font-weight:400;font-size:18px;line-height:1.7;color:rgba(244,243,240,0.97);text-shadow:0 1px 14px rgba(0,0,0,0.6)">Pattern-matching at a scale no single mind can hold. Correlations across every deal, every fund, every year the industry has been running.</p>
+        </div>
+      </section>
+
+      <section class="beat" data-screen-label="06 Live now" data-in="0.9" data-peak="1" data-out="1" style="position:relative;width:100vw;height:100vh;flex:0 0 auto;overflow:hidden">
+        <div class="stmt" style="position:absolute;top:14%;left:0;right:0;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 5vw;pointer-events:none">
+          <span class="rv" style="display:block;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(34px,4.6vw,78px);line-height:0.98;letter-spacing:-0.05em;color:#ffffff">Everything an analyst runs before a deal -</span>
+          <span class="rv" style="display:block;font-family:Inter,sans-serif;font-weight:400;font-size:clamp(34px,4.6vw,78px);line-height:0.95;letter-spacing:-0.08em;color:#ffffff;margin-top:2px">done, before the call.<span id="cur" style="display:inline-block;width:0.13em;height:0.72em;background:#f4f3f0;margin-left:0.16em;animation:hzblink 1.06s steps(1) infinite"></span></span>
+        </div>
+        <div class="rv" style="position:absolute;bottom:58px;left:7vw;max-width:390px;z-index:2">
+          <div class="lbl" style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(244,243,240,0.62);margin-bottom:10px;text-shadow:0 1px 10px rgba(0,0,0,0.6)">Live now</div>
+          <p style="margin:0;font-family:Inter,sans-serif;font-weight:400;font-size:18px;line-height:1.7;color:rgba(244,243,240,0.97);text-shadow:0 1px 14px rgba(0,0,0,0.6)">The first step of the layer is live now.</p>
+        </div>
+        <div class="rv" style="position:absolute;bottom:58px;right:7vw;max-width:390px;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:18px">
+          <p style="margin:0;font-family:Inter,sans-serif;font-weight:400;font-size:16px;line-height:1.7;color:rgba(244,243,240,0.94);text-shadow:0 1px 14px rgba(0,0,0,0.6)">A recorded walkthrough of the pre-call intelligence layer - or write to us and we'll show you live.</p>
+          <div style="display:flex;align-items:center;gap:20px">
+            <a href="./demo.html" class="cbtn" style="pointer-events:auto;font-family:Inter,sans-serif;font-weight:500;font-size:12px;letter-spacing:0.05em;color:#12120f;background:#f4f3f0;padding:11px 22px;border-radius:999px;text-decoration:none;white-space:nowrap" style-hover="background:#d9d6cd;color:#12120f">See the demo</a>
+            <a href="mailto:hq@hizen.vc" class="clink" style="pointer-events:auto;font-family:Inter,sans-serif;font-weight:500;font-size:13px;color:#f4f3f0;text-decoration:none;border-bottom:1px solid rgba(244,243,240,0.35);padding-bottom:3px;white-space:nowrap" style-hover="color:#b5b2a8">hq@hizen.vc</a>
+          </div>
+        </div>
+        <div id="legal" style="position:absolute;left:50%;transform:translateX(-50%);bottom:42px;z-index:2;font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:10px;letter-spacing:0.08em;color:rgba(244,243,240,0.55);white-space:nowrap">© 2026 hizen.vc · intelligence for private capital</div>
+      </section>
+
+    </div>
+  </div>
+</div>
+<div id="tagline" style="position:fixed;left:50%;transform:translateX(-50%);bottom:20px;z-index:60;opacity:0;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:10.5px;letter-spacing:0.14em;color:rgba(244,243,240,0.6);white-space:nowrap;text-shadow:0 1px 10px rgba(0,0,0,0.6)">Automation is where it starts · Context is what compounds · Judgment is what it serves</div>
+<div id="prog" style="position:fixed;left:0;bottom:0;height:2px;width:0;background:#f4f3f0;z-index:60"></div>
+<div id="hint" style="position:fixed;right:7vw;bottom:24px;z-index:60;display:flex;align-items:center;gap:12px;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:10px;letter-spacing:0.3em;color:rgba(244,243,240,0.6)">SCROLL<span style="display:grid;grid-template-columns:repeat(2,4px);grid-template-rows:repeat(3,4px)"><span style="background:rgba(244,243,240,0.7)"></span><span></span><span></span><span style="background:rgba(244,243,240,0.7)"></span><span style="background:rgba(244,243,240,0.7)"></span><span></span></span></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;pace&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 84, &quot;min&quot;: 50, &quot;max&quot;: 160, &quot;step&quot;: 2, &quot;unit&quot;: &quot;vh&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Film&quot;},
+  &quot;snap&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Film&quot;}
+}">
+class Component extends DCLogic {
+  renderVals() { return {}; }
+  componentDidMount() {
+    this._cfg();
+    const wait = () => {
+      if (window.gsap && window.ScrollTrigger && window.Lenis) this._init();
+      else this._raf = requestAnimationFrame(wait);
+    };
+    wait();
+    this._readyGuard = setTimeout(() => { window.__ready = true; }, 7000);
+  }
+  _cfg() {
+    this.pace = this.props.pace ?? 84;
+    this.snapOn = this.props.snap ?? true;
+  }
+  componentDidUpdate() {
+    this._cfg();
+    if (!this._booted) return;
+    this._applyLayout();
+    ScrollTrigger.refresh();
+  }
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf); cancelAnimationFrame(this._spotRaf);
+    clearTimeout(this._readyGuard); clearTimeout(this._snapT); clearTimeout(this._snapClear);
+    window.removeEventListener('mousemove', this._mm);
+    if (this._tick) gsap.ticker.remove(this._tick);
+    if (window.ScrollTrigger) ScrollTrigger.getAll().forEach(t => t.kill());
+    if (this.lenis) this.lenis.destroy();
+    window.removeEventListener('wheel', this._wheel);
+    window.removeEventListener('resize', this._resize);
+  }
+  _init() {
+    if (this._booted) return; this._booted = true;
+    const qs = new URLSearchParams(location.search);
+    this.rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    gsap.registerPlugin(ScrollTrigger);
+    this.beats = Array.from(document.querySelectorAll('.beat')).map(el => ({
+      el, in: +el.dataset.in, peak: +el.dataset.peak, out: +el.dataset.out,
+      stmt: el.querySelector('.stmt'),
+      els: Array.from(el.querySelectorAll('.rv'))
+    }));
+    if (!this.rm) {
+      this.lenis = new Lenis({ duration: 0.9, wheelMultiplier: 1.3, smoothWheel: true });
+      this.lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(this._tick = t => this.lenis.raf(t * 1000));
+      gsap.ticker.lagSmoothing(0);
+      gsap.set(['#baseimg', '#spotimg'], { autoAlpha: 0 });
+      gsap.to(['#baseimg', '#spotimg'], { autoAlpha: 1, duration: 1.2, ease: 'power2.out' });
+      setTimeout(() => { gsap.set(['#baseimg', '#spotimg'], { autoAlpha: 1 }); }, 1500);
+    }
+    window.addEventListener('wheel', this._wheel = e => {
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+      const y = this.lenis ? this.lenis.scroll : window.scrollY;
+      if (this.lenis) this.lenis.scrollTo(y + e.deltaX * 1.2); else window.scrollBy(0, e.deltaX);
+    }, { passive: true });
+    const spot = document.getElementById('spot');
+    if (spot && !this.rm) {
+      this._m = { x: -999, y: -999 }; this._sm = { x: -999, y: -999 };
+      window.addEventListener('mousemove', this._mm = e => {
+        if (this._m.x < -500) { this._sm.x = e.clientX; this._sm.y = e.clientY; }
+        this._m.x = e.clientX; this._m.y = e.clientY;
+      }, { passive: true });
+      const loop = () => {
+        this._sm.x += (this._m.x - this._sm.x) * 0.1;
+        this._sm.y += (this._m.y - this._sm.y) * 0.1;
+        const g = 'radial-gradient(circle 260px at ' + this._sm.x.toFixed(1) + 'px ' + this._sm.y.toFixed(1) + 'px, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.75) 60%, rgba(0,0,0,0.4) 75%, rgba(0,0,0,0.12) 88%, transparent 100%)';
+        spot.style.webkitMaskImage = g; spot.style.maskImage = g;
+        this._spotRaf = requestAnimationFrame(loop);
+      };
+      loop();
+    }
+    let rt;
+    window.addEventListener('resize', this._resize = () => {
+      clearTimeout(rt); rt = setTimeout(() => { this._applyLayout(); ScrollTrigger.refresh(); }, 150);
+    });
+    this._applyLayout();
+    const track = document.getElementById('track');
+    gsap.to(track, {
+      x: () => -(track.scrollWidth - window.innerWidth),
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#film', start: 'top top', end: 'bottom bottom',
+        scrub: this.rm ? true : 0.5, invalidateOnRefresh: true,
+        onUpdate: st => this._progress(st.progress)
+      }
+    });
+    if (qs.has('debug')) {
+      let last = performance.now();
+      gsap.ticker.add(() => { const n = performance.now(); console.log('[hizen] frame ' + (n - last).toFixed(1) + 'ms'); last = n; });
+    }
+    this._progress(0);
+    const j = parseFloat(qs.get('jump'));
+    if (!isNaN(j)) {
+      if (this.lenis) this.lenis.scrollTo(j, { immediate: true }); else window.scrollTo(0, j);
+      ScrollTrigger.update();
+    }
+    (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(() => {
+      requestAnimationFrame(() => requestAnimationFrame(() => { window.__ready = true; }));
+    });
+  }
+  _applyLayout() {
+    const film = document.getElementById('film');
+    if (film) film.style.height = (100 + 5 * this.pace) + 'vh';
+    const tag = document.getElementById('tagline');
+    if (tag) tag.style.display = window.innerWidth < 1160 ? 'none' : '';
+  }
+  _progress(p) {
+    this._lastP = p;
+    const prog = document.getElementById('prog');
+    if (prog) prog.style.width = (Math.round(p * window.innerWidth / 8) * 8) + 'px';
+    const tag = document.getElementById('tagline');
+    if (tag) tag.style.opacity = Math.max(0, Math.min(1, (p - 0.88) / 0.08));
+    if (p > 0.004 && !this._hintGone) {
+      this._hintGone = true;
+      const h = document.getElementById('hint');
+      if (h) gsap.to(h, { autoAlpha: 0, duration: 0.5 });
+    }
+    if (!this.rm) {
+      gsap.set(['#baseimg', '#spotimg'], { x: (-p * 200) + 'vw' });
+    }
+    for (const b of this.beats) {
+      if (b.stmt && !this.rm) {
+        const d = Math.max(-1, Math.min(1, (p - b.peak) / 0.1));
+        gsap.set(b.stmt, { x: d * -22 });
+      }
+      if (b.els.length) {
+        const raw = Math.max(0, 1 - Math.abs(p - b.peak) / 0.085);
+        b.els.forEach((el, k) => {
+          const v = this.rm ? 1 : Math.max(0, Math.min(1, (raw - k * 0.09) / (1 - k * 0.09)));
+          const e = 1 - Math.pow(1 - v, 3);
+          gsap.set(el, { autoAlpha: e, y: (1 - e) * 26, filter: 'blur(' + ((1 - e) * 9).toFixed(2) + 'px)' });
+        });
+      }
+    }
+    if (this.snapOn && !this._snapping) {
+      clearTimeout(this._snapT);
+      this._snapT = setTimeout(() => this._snap(), 190);
+    }
+  }
+  _snap() {
+    const film = document.getElementById('film');
+    if (!film) return;
+    const D = film.offsetHeight - window.innerHeight;
+    if (D <= 0) return;
+    const p = this._lastP || 0;
+    const target = Math.round(p * 5) / 5 * D;
+    const cur = this.lenis ? this.lenis.scroll : window.scrollY;
+    if (Math.abs(target - cur) < 6) return;
+    this._snapping = true;
+    if (this.lenis) this.lenis.scrollTo(target, { duration: 0.75, easing: t => 1 - Math.pow(1 - t, 3) });
+    else window.scrollTo({ top: target, behavior: 'smooth' });
+    clearTimeout(this._snapClear);
+    this._snapClear = setTimeout(() => { this._snapping = false; }, 850);
+  }
+}
+</script>
+</body>
+</html>
