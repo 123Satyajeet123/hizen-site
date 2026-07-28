@@ -1,47 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<title>hızen.vc — demo</title>
+<meta name="description" content="A two-minute recorded walkthrough of the pre-call intelligence layer: deck in, brief out.">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32-dark.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32-light.png" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="/img/icon-180-dark.png">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="hizen.vc">
+<meta property="og:url" content="https://hizen.vc/demo.html">
+<meta property="og:title" content="hızen.vc — demo">
+<meta property="og:description" content="Deck in, brief out. The whole pre-call layer, in two minutes.">
+<meta property="og:image" content="https://hizen.vc/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="hızen.vc — demo">
+<meta name="twitter:description" content="Deck in, brief out. The whole pre-call layer, in two minutes.">
+<meta name="twitter:image" content="https://hizen.vc/img/og.png">
+<!-- Plain static page on purpose. The dc-runtime re-renders markup through React,
+     which strips <video>'s valueless attributes (controls/playsinline) and its
+     <source> child, leaving a dead player. This page had no logic to run anyway. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#fcfbf8;color:#12120f;-webkit-font-smoothing:antialiased;font-family:Inter,sans-serif}
+  a{color:#12120f}
+  ::selection{background:#12120f;color:#fcfbf8}
+  .clink{font-weight:500;color:#12120f;text-decoration:none;border-bottom:1px solid #dbd8cf;padding-bottom:3px}
+  .clink:hover{color:#75736c}
+  .cbtn{font-weight:500;font-size:12px;letter-spacing:0.05em;color:#fcfbf8;background:#12120f;padding:11px 22px;border-radius:999px;text-decoration:none}
+  .cbtn:hover{background:#33312a}
+</style>
 </head>
 <body>
-<x-dc>
-<helmet>
-  <title>hızen.vc — demo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
-  <style>
-    body{margin:0;background:#fcfbf8;color:#12120f;-webkit-font-smoothing:antialiased}
-    a{color:#12120f}a:hover{color:#75736c}
-    ::selection{background:#12120f;color:#fcfbf8}
-    @keyframes hzblink{0%,55%{opacity:1}56%,100%{opacity:0}}
-    @media (prefers-reduced-motion: reduce){*{animation:none !important}}
-  </style>
-</helmet>
 <header style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:24px 7vw;pointer-events:none">
   <a href="./index.html" style="pointer-events:auto;font-family:'Space Grotesk',Inter,sans-serif;font-weight:500;font-size:20px;letter-spacing:0.005em;color:#12120f;text-decoration:none;line-height:1">h<span style="position:relative;display:inline-block">ı<span style="position:absolute;left:50%;top:0.06em;transform:translateX(-50%);width:0.17em;height:0.17em;border-radius:50%;background:#a9a69e"></span></span>zen<span style="color:#a9a69e">.vc</span></a>
   <nav style="display:flex;align-items:center;gap:28px;pointer-events:auto">
-    <a href="mailto:hq@hizen.vc" style="font-family:Inter,sans-serif;font-weight:500;font-size:12px;letter-spacing:0.05em;color:#12120f;text-decoration:none;border-bottom:1px solid #dbd8cf;padding-bottom:3px" style-hover="color:#75736c">Contact us</a>
+    <a href="mailto:hq@hizen.vc" class="clink" style="font-size:12px;letter-spacing:0.05em">Contact us</a>
   </nav>
 </header>
-<main data-screen-label="Demo placeholder" style="min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 7vw 15vh;box-sizing:border-box">
-  <div style="display:flex;gap:12px;align-items:baseline;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#12120f;margin-bottom:34px"><span style="color:#b5b2a8">Demo</span>Coming soon</div>
-  <h1 style="margin:0;font-family:Inter,sans-serif;font-weight:600;font-size:clamp(34px,4.6vw,68px);line-height:1.05;letter-spacing:-0.035em;color:#12120f;max-width:15ch;text-wrap:pretty">The demo film is being cut.<span style="display:inline-block;width:0.13em;height:0.72em;background:#12120f;margin-left:0.16em;animation:hzblink 1.06s steps(1) infinite"></span></h1>
-  <p style="margin:26px 0 0;font-family:Inter,sans-serif;font-weight:400;font-size:15px;line-height:1.75;color:#605e57;max-width:420px">A recorded walkthrough of the pre-call intelligence layer is on its way. Until then, we'll show you live.</p>
-  <div style="display:flex;align-items:center;gap:22px;margin-top:32px">
-    <a href="mailto:hq@hizen.vc" style="font-family:Inter,sans-serif;font-weight:500;font-size:12px;letter-spacing:0.05em;color:#fcfbf8;background:#12120f;padding:11px 22px;border-radius:999px;text-decoration:none" style-hover="background:#33312a;color:#fcfbf8">Book a live walkthrough</a>
-    <a href="./index.html" style="font-family:Inter,sans-serif;font-weight:500;font-size:13px;color:#12120f;text-decoration:none;border-bottom:1px solid #dbd8cf;padding-bottom:3px" style-hover="color:#75736c">Back to site</a>
+<main style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:15vh 7vw 10vh;box-sizing:border-box">
+  <div style="display:flex;gap:12px;align-items:baseline;font-weight:600;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px"><span style="color:#b5b2a8">Demo</span>1 min 59 sec</div>
+  <h1 style="margin:0;font-weight:600;font-size:clamp(30px,3.5vw,50px);line-height:1.05;letter-spacing:-0.035em;max-width:20ch;text-align:center;text-wrap:pretty">Deck in, brief out. The whole pre-call layer.</h1>
+  <p style="margin:20px 0 0;font-size:15px;line-height:1.75;color:#605e57;max-width:460px;text-align:center">A recorded walkthrough of what hizen runs before a partner takes the call. Sound on — it's narrated.</p>
+  <!-- no autoplay: browsers only permit it muted, and muting a narrated film removes the film -->
+  <video controls playsinline preload="metadata" poster="img/demo-poster.jpg"
+         style="width:100%;max-width:940px;margin-top:40px;border-radius:10px;border:1px solid #e4e1d8;background:#eeede9;display:block;aspect-ratio:16/9">
+    <source src="hizen-demo.mp4" type="video/mp4">
+    <a href="hizen-demo.mp4">Download the demo film (MP4, 11 MB)</a>
+  </video>
+  <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:22px;margin-top:36px">
+    <a href="mailto:hq@hizen.vc" class="cbtn">Book a live walkthrough</a>
+    <a href="./index.html" class="clink" style="font-size:13px">Back to site</a>
   </div>
-  <div style="position:absolute;left:7vw;bottom:26px;font-family:Inter,sans-serif;font-weight:400;font-size:11px;letter-spacing:0.08em;color:#aaa79d">© 2026 hizen.vc · intelligence for private capital</div>
+  <div style="margin-top:56px;font-size:11px;letter-spacing:0.08em;color:#aaa79d">© 2026 hizen.vc · intelligence for private capital</div>
 </main>
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  renderVals() { return {}; }
-  componentDidMount() { window.__ready = true; }
-}
-</script>
 </body>
 </html>
