@@ -35,7 +35,17 @@
   .cbtn:hover{background:#d9d6cd}
   :focus-visible{outline:2px solid currentColor;outline-offset:3px}
 
+  /* The heading block plus a 940px 16:9 film is ~918px tall, which overflows a
+     900px viewport — so `justify-content:center` had nothing to centre and the
+     film ran off the fold.
+
+     The cap is on WIDTH, not height. `max-height` clamps the box while leaving
+     it 940px wide, and the frame then letterboxes inside its own element with
+     grey bars down both sides. Capping width at 90vh (= 160vh/16*9, the width
+     whose 16:9 height is 50.6vh) lets aspect-ratio derive the height, so the
+     film only ever shrinks — it never gets bars. */
   .film{
+    max-width: min(940px, 84vh);
     box-shadow:
       0 0 0 1px rgba(244,243,240,0.12),
       0 24px 70px -24px rgba(0,0,0,0.9),
@@ -43,15 +53,6 @@
       0 0 260px -60px rgba(244,243,240,0.22);
   }
 
-  .script{width:100%;max-width:640px;margin-top:34px;text-align:left}
-  .script summary{
-    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;
-    text-transform:uppercase;color:rgba(244,243,240,0.62);cursor:pointer;
-    list-style:none;text-align:center;padding:8px}
-  .script summary::-webkit-details-marker{display:none}
-  .script summary:hover{color:#f4f3f0}
-  .script[open] summary{margin-bottom:10px}
-  .script p{margin:0 0 15px;font-size:14px;line-height:1.8;color:rgba(244,243,240,0.72)}
   video::cue{background:rgba(5,5,5,0.82);color:#f4f3f0;font-family:Inter,sans-serif;font-size:0.9em}
 
   /* A flex column with `align-items:center` sizes its children to max-content,
@@ -75,8 +76,7 @@
     <a href="mailto:hq@hizen.vc" class="clink" style="font-size:12px;letter-spacing:0.05em">Contact us</a>
   </nav>
 </header>
-<main style="position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:15vh 7vw 10vh;box-sizing:border-box">
-  <div style="display:flex;gap:12px;align-items:baseline;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:22px;color:rgba(244,243,240,0.62)"><span>Demo</span>1 min 16 sec</div>
+<main style="position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:9vh 7vw 5vh;box-sizing:border-box">
   <h1 style="margin:0;font-weight:600;font-size:clamp(30px,3.5vw,50px);line-height:1.05;letter-spacing:-0.035em;max-width:20ch;text-align:center;text-wrap:pretty">Deck in, brief out. The whole pre-call layer.</h1>
   <p style="margin:20px 0 0;font-size:15px;line-height:1.75;color:#8f8c85;max-width:460px;text-align:center">A recorded walkthrough of what hizen runs before a partner takes the call. Narrated — captions are on, sound is better.</p>
   <!-- no autoplay: browsers only permit it muted, and muting a narrated film removes the film -->
@@ -85,31 +85,11 @@
        emit into the page instead of sitting on it, the same falloff the vignette
        and scrim use. -->
   <video controls playsinline preload="metadata" poster="img/demo-poster.jpg" class="film"
-         style="width:100%;max-width:940px;margin-top:40px;border-radius:10px;background:#12120f;display:block;aspect-ratio:16/9">
+         style="width:100%;margin-top:34px;border-radius:10px;background:#12120f;display:block;aspect-ratio:16/9">
     <source src="hizen-demo.mp4" type="video/mp4">
     <track kind="captions" src="hizen-demo.vtt" srclang="en" label="English" default>
     <a href="hizen-demo.mp4">Download the demo film (MP4, 5 MB)</a>
   </video>
-  <details class="script">
-    <summary>Read the transcript</summary>
-    <p>Private investing is inherently unstructured.</p>
-    <p>Data comes from different sources in different formats, and a lot of analysts' time is spent just structuring it.</p>
-    <p>In the operational flow of a VC, there are different phases.</p>
-    <p>In pre-screening alone, analysts spend hours on repetitive tasks just to screen every pitch that comes in each month.</p>
-    <p>What we've built is an AI analyst that solves the pre-call intelligence layer.</p>
-    <p>It takes data from the sources the fund already uses.</p>
-    <p>Let's say a deck comes in.</p>
-    <p>The key information is extracted.</p>
-    <p>The claims inside it are verified.</p>
-    <p>And the data is enriched from external sources.</p>
-    <p>And all of this happens inside the tools the fund already uses.</p>
-    <p>On Slack, in a brief that gives you the full pre-call picture with a score, and the CRM or the Google Sheet is updated automatically.</p>
-    <p>You can also interact with every deck the fund has received over time.</p>
-    <p>This becomes a persistent context, personalized to how that fund invests.</p>
-    <p>As these operations get automated, a context graph is built underneath — the institutional memory for private investors.</p>
-    <p>We are Hizen.</p>
-    <p>We are building the intelligence layer for private investing.</p>
-  </details>
   <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:22px;margin-top:36px">
     <a href="./contact.html" class="cbtn">Book a live walkthrough</a>
     <a href="./index.html" class="clink" style="font-size:13px">Back to site</a>
