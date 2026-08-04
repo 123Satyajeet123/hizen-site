@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>hızen.vc — demo</title>
-<meta name="description" content="A two-minute recorded walkthrough of the pre-call intelligence layer: deck in, brief out.">
+<meta name="description" content="A recorded walkthrough of the pre-call intelligence layer: deck in, brief out.">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32-dark.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32-light.png" media="(prefers-color-scheme: dark)">
 <link rel="apple-touch-icon" href="/img/icon-180-dark.png">
@@ -12,13 +12,13 @@
 <meta property="og:site_name" content="hizen.vc">
 <meta property="og:url" content="https://hizen.vc/demo.html">
 <meta property="og:title" content="hızen.vc — demo">
-<meta property="og:description" content="Deck in, brief out. The whole pre-call layer, in two minutes.">
+<meta property="og:description" content="Deck in, brief out. The whole pre-call layer, end to end.">
 <meta property="og:image" content="https://hizen.vc/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="hızen.vc — demo">
-<meta name="twitter:description" content="Deck in, brief out. The whole pre-call layer, in two minutes.">
+<meta name="twitter:description" content="Deck in, brief out. The whole pre-call layer, end to end.">
 <meta name="twitter:image" content="https://hizen.vc/img/og.png">
 <!-- Plain static page on purpose. The dc-runtime re-renders markup through React,
      which strips <video>'s valueless attributes (controls/playsinline) and its
@@ -76,7 +76,7 @@
   </nav>
 </header>
 <main style="position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:15vh 7vw 10vh;box-sizing:border-box">
-  <div style="display:flex;gap:12px;align-items:baseline;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:22px;color:rgba(244,243,240,0.62)"><span>Demo</span>1 min 59 sec</div>
+  <div style="display:flex;gap:12px;align-items:baseline;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:22px;color:rgba(244,243,240,0.62)"><span>Demo</span>1 min 16 sec</div>
   <h1 style="margin:0;font-weight:600;font-size:clamp(30px,3.5vw,50px);line-height:1.05;letter-spacing:-0.035em;max-width:20ch;text-align:center;text-wrap:pretty">Deck in, brief out. The whole pre-call layer.</h1>
   <p style="margin:20px 0 0;font-size:15px;line-height:1.75;color:#8f8c85;max-width:460px;text-align:center">A recorded walkthrough of what hizen runs before a partner takes the call. Narrated — captions are on, sound is better.</p>
   <!-- no autoplay: browsers only permit it muted, and muting a narrated film removes the film -->
@@ -88,21 +88,30 @@
          style="width:100%;max-width:940px;margin-top:40px;border-radius:10px;background:#12120f;display:block;aspect-ratio:16/9">
     <source src="hizen-demo.mp4" type="video/mp4">
     <track kind="captions" src="hizen-demo.vtt" srclang="en" label="English" default>
-    <a href="hizen-demo.mp4">Download the demo film (MP4, 6.3 MB)</a>
+    <a href="hizen-demo.mp4">Download the demo film (MP4, 5 MB)</a>
   </video>
   <details class="script">
     <summary>Read the transcript</summary>
-    <p>Private investing is inherently unstructured. Data comes from different sources, different places, and a lot of time is spent structuring this data.</p>
-    <p>In the operational flow of a VC, there are different phases. In pre-screening alone, analysts spend time on different tasks to screen every pitch that comes in each month.</p>
-    <p>What we've built so far is an AI analyst that solves the pre-call intelligence layer. It takes data from the sources the VC fund already uses.</p>
-    <p>Let's say a deck comes in. From the deck, key information is extracted. Claims are verified. Data is enriched from external sources.</p>
-    <p>All of this runs inside the tools your fund already uses. The deck triggers a Slack notification with a summary, opens into a pre-call brief with a score, and syncs the deal into your CRM or Google Sheet — automatically.</p>
-    <p>You can also interact with every deck the fund has received over time. This becomes a persistent, personalised context for the fund.</p>
-    <p>As these operations get automated, a context graph is built — the institutional memory for private investors.</p>
-    <p>We are hizen. We are building the intelligence layer for private investing.</p>
+    <p>Private investing is inherently unstructured.</p>
+    <p>Data comes from different sources in different formats, and a lot of analysts' time is spent just structuring it.</p>
+    <p>In the operational flow of a VC, there are different phases.</p>
+    <p>In pre-screening alone, analysts spend hours on repetitive tasks just to screen every pitch that comes in each month.</p>
+    <p>What we've built is an AI analyst that solves the pre-call intelligence layer.</p>
+    <p>It takes data from the sources the fund already uses.</p>
+    <p>Let's say a deck comes in.</p>
+    <p>The key information is extracted.</p>
+    <p>The claims inside it are verified.</p>
+    <p>And the data is enriched from external sources.</p>
+    <p>And all of this happens inside the tools the fund already uses.</p>
+    <p>On Slack, in a brief that gives you the full pre-call picture with a score, and the CRM or the Google Sheet is updated automatically.</p>
+    <p>You can also interact with every deck the fund has received over time.</p>
+    <p>This becomes a persistent context, personalized to how that fund invests.</p>
+    <p>As these operations get automated, a context graph is built underneath — the institutional memory for private investors.</p>
+    <p>We are Hizen.</p>
+    <p>We are building the intelligence layer for private investing.</p>
   </details>
   <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:22px;margin-top:36px">
-    <a href="https://form.typeform.com/to/vV9elPB1" class="cbtn" target="_blank" rel="noopener">Book a live walkthrough</a>
+    <a href="./contact.html" class="cbtn">Book a live walkthrough</a>
     <a href="./index.html" class="clink" style="font-size:13px">Back to site</a>
   </div>
   <div style="margin-top:56px;font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:10px;letter-spacing:0.08em;color:rgba(244,243,240,0.42)">© 2026 hizen.vc · intelligence for private capital</div>

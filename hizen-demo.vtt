@@ -1,52 +1,52 @@
 WEBVTT
 
-00:00:00.625 --> 00:00:04.561
+00:00:00.000 --> 00:00:02.341
 Private investing is inherently unstructured.
 
-00:00:04.561 --> 00:00:14.113
-Data comes from different sources, different places, and a lot of time is spent structuring this data.
+00:00:02.341 --> 00:00:09.386
+Data comes from different sources in different formats, and a lot of analysts' time is spent just structuring it.
 
-00:00:14.113 --> 00:00:20.311
+00:00:09.386 --> 00:00:13.604
 In the operational flow of a VC, there are different phases.
 
-00:00:20.311 --> 00:00:32.658
-In pre-screening alone, analysts spend time on different tasks to screen every pitch that comes in each month.
+00:00:13.604 --> 00:00:21.493
+In pre-screening alone, analysts spend hours on repetitive tasks just to screen every pitch that comes in each month.
 
-00:00:32.658 --> 00:00:39.739
-What we've built so far is an AI analyst that solves the pre-call intelligence layer.
+00:00:21.493 --> 00:00:26.201
+What we've built is an AI analyst that solves the pre-call intelligence layer.
 
-00:00:39.739 --> 00:00:46.413
-It takes data from the sources the VC fund already uses.
+00:00:26.201 --> 00:00:29.870
+It takes data from the sources the fund already uses.
 
-00:00:46.413 --> 00:00:48.710
+00:00:29.870 --> 00:00:31.648
 Let's say a deck comes in.
 
-00:00:48.710 --> 00:00:52.505
-From the deck, key information is extracted.
+00:00:31.648 --> 00:00:33.976
+The key information is extracted.
 
-00:00:52.505 --> 00:00:54.356
-Claims are verified.
+00:00:33.976 --> 00:00:36.177
+The claims inside it are verified.
 
-00:00:54.356 --> 00:00:58.016
-Data is enriched from external sources.
+00:00:36.177 --> 00:00:39.133
+And the data is enriched from external sources.
 
-00:00:58.016 --> 00:01:03.588
-All of this runs inside the tools your fund already uses.
+00:00:39.133 --> 00:00:44.077
+And all of this happens inside the tools the fund already uses.
 
-00:01:03.588 --> 00:01:20.785
-The deck triggers a Slack notification with a summary, opens into a pre-call brief with a score, and syncs the deal into your CRM or Google Sheet — automatically.
+00:00:44.077 --> 00:00:53.562
+On Slack, in a brief that gives you the full pre-call picture with a score, and the CRM or the Google Sheet is updated automatically.
 
-00:01:20.785 --> 00:01:28.536
+00:00:53.562 --> 00:00:58.446
 You can also interact with every deck the fund has received over time.
 
-00:01:28.536 --> 00:01:34.043
-This becomes a persistent, personalised context for the fund.
+00:00:58.446 --> 00:01:03.218
+This becomes a persistent context, personalized to how that fund invests.
 
-00:01:34.043 --> 00:01:45.915
-As these operations get automated, a context graph is built — the institutional memory for private investors.
+00:01:03.218 --> 00:01:10.317
+As these operations get automated, a context graph is built underneath — the institutional memory for private investors.
 
-00:01:45.915 --> 00:01:47.351
-We are hizen.
+00:01:10.317 --> 00:01:11.892
+We are Hizen.
 
-00:01:47.351 --> 00:01:54.634
+00:01:11.892 --> 00:01:15.569
 We are building the intelligence layer for private investing.
