@@ -43,6 +43,17 @@
       0 0 260px -60px rgba(244,243,240,0.22);
   }
 
+  .script{width:100%;max-width:640px;margin-top:34px;text-align:left}
+  .script summary{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;
+    text-transform:uppercase;color:rgba(244,243,240,0.62);cursor:pointer;
+    list-style:none;text-align:center;padding:8px}
+  .script summary::-webkit-details-marker{display:none}
+  .script summary:hover{color:#f4f3f0}
+  .script[open] summary{margin-bottom:10px}
+  .script p{margin:0 0 15px;font-size:14px;line-height:1.8;color:rgba(244,243,240,0.72)}
+  video::cue{background:rgba(5,5,5,0.82);color:#f4f3f0;font-family:Inter,sans-serif;font-size:0.9em}
+
   /* A flex column with `align-items:center` sizes its children to max-content,
      so `max-width:460px` overflows a 390px phone instead of wrapping. */
   main > * { max-width: 100% }
@@ -67,7 +78,7 @@
 <main style="position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:15vh 7vw 10vh;box-sizing:border-box">
   <div style="display:flex;gap:12px;align-items:baseline;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:22px;color:rgba(244,243,240,0.62)"><span>Demo</span>1 min 59 sec</div>
   <h1 style="margin:0;font-weight:600;font-size:clamp(30px,3.5vw,50px);line-height:1.05;letter-spacing:-0.035em;max-width:20ch;text-align:center;text-wrap:pretty">Deck in, brief out. The whole pre-call layer.</h1>
-  <p style="margin:20px 0 0;font-size:15px;line-height:1.75;color:#8f8c85;max-width:460px;text-align:center">A recorded walkthrough of what hizen runs before a partner takes the call. Sound on — it's narrated.</p>
+  <p style="margin:20px 0 0;font-size:15px;line-height:1.75;color:#8f8c85;max-width:460px;text-align:center">A recorded walkthrough of what hizen runs before a partner takes the call. Narrated — captions are on, sound is better.</p>
   <!-- no autoplay: browsers only permit it muted, and muting a narrated film removes the film -->
   <!-- The film is uniformly bright (luma ~233 throughout) because it is a screen
        recording. Rather than fight that, it is lit like a screen: the halo lets it
@@ -76,8 +87,20 @@
   <video controls playsinline preload="metadata" poster="img/demo-poster.jpg" class="film"
          style="width:100%;max-width:940px;margin-top:40px;border-radius:10px;background:#12120f;display:block;aspect-ratio:16/9">
     <source src="hizen-demo.mp4" type="video/mp4">
+    <track kind="captions" src="hizen-demo.vtt" srclang="en" label="English" default>
     <a href="hizen-demo.mp4">Download the demo film (MP4, 6.3 MB)</a>
   </video>
+  <details class="script">
+    <summary>Read the transcript</summary>
+    <p>Private investing is inherently unstructured. Data comes from different sources, different places, and a lot of time is spent structuring this data.</p>
+    <p>In the operational flow of a VC, there are different phases. In pre-screening alone, analysts spend time on different tasks to screen every pitch that comes in each month.</p>
+    <p>What we've built so far is an AI analyst that solves the pre-call intelligence layer. It takes data from the sources the VC fund already uses.</p>
+    <p>Let's say a deck comes in. From the deck, key information is extracted. Claims are verified. Data is enriched from external sources.</p>
+    <p>All of this runs inside the tools your fund already uses. The deck triggers a Slack notification with a summary, opens into a pre-call brief with a score, and syncs the deal into your CRM or Google Sheet — automatically.</p>
+    <p>You can also interact with every deck the fund has received over time. This becomes a persistent, personalised context for the fund.</p>
+    <p>As these operations get automated, a context graph is built — the institutional memory for private investors.</p>
+    <p>We are hizen. We are building the intelligence layer for private investing.</p>
+  </details>
   <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:22px;margin-top:36px">
     <a href="https://form.typeform.com/to/vV9elPB1" class="cbtn" target="_blank" rel="noopener">Book a live walkthrough</a>
     <a href="./index.html" class="clink" style="font-size:13px">Back to site</a>
