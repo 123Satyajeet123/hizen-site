@@ -60,7 +60,15 @@
   main > * { max-width: 100% }
   @media (max-width: 640px) {
     header { padding-left: 5vw !important; padding-right: 5vw !important }
-    main { padding-left: 5vw !important; padding-right: 5vw !important }
+    /* Narrower gutters and a shorter top inset: a phone has the width to spare
+       far less than a desktop does, and the film is the reason to be here. */
+    main { padding: 12vh 4vw 7vh !important }
+    h1 { font-size: 28px !important; max-width: 16ch !important }
+    main > p { font-size: 14.5px !important; line-height: 1.7 !important }
+    /* 84vh would cap a 844px-tall phone at 709px, far wider than the screen —
+       so on a phone the film is width-bound, and the height cap only gets in
+       the way in landscape. */
+    .film { max-width: 100% !important; border-radius: 8px !important }
   }
 </style>
 </head>
@@ -77,8 +85,8 @@
   </nav>
 </header>
 <main style="position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:9vh 7vw 5vh;box-sizing:border-box">
-  <h1 style="margin:0;font-weight:600;font-size:clamp(30px,3.5vw,50px);line-height:1.05;letter-spacing:-0.035em;max-width:20ch;text-align:center;text-wrap:pretty">Deck in, brief out. The whole pre-call layer.</h1>
-  <p style="margin:20px 0 0;font-size:15px;line-height:1.75;color:#8f8c85;max-width:460px;text-align:center">A recorded walkthrough of what hizen runs before a partner takes the call. Narrated — captions are on, sound is better.</p>
+  <h1 style="margin:0;font-weight:600;font-size:clamp(30px,3.5vw,50px);line-height:1.05;letter-spacing:-0.035em;max-width:24ch;text-align:center;text-wrap:pretty">Deck in, brief out. The whole pre-call layer. Everything in between automated.</h1>
+  <p style="margin:20px 0 0;font-size:15px;line-height:1.75;color:#8f8c85;max-width:520px;text-align:center">A recorded walkthrough of the pre-call intelligence layer by hizen. For a live demo, submit your details under <a href="./contact.html" class="clink">Get in touch</a> — or write to us directly at <a href="mailto:hq@hizen.vc" class="clink">hq@hizen.vc</a></p>
   <!-- no autoplay: browsers only permit it muted, and muting a narrated film removes the film -->
   <!-- The film is uniformly bright (luma ~233 throughout) because it is a screen
        recording. Rather than fight that, it is lit like a screen: the halo lets it
