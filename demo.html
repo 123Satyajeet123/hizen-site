@@ -35,6 +35,14 @@
   .cbtn:hover{background:#d9d6cd}
   :focus-visible{outline:2px solid currentColor;outline-offset:3px}
 
+  .film{
+    box-shadow:
+      0 0 0 1px rgba(244,243,240,0.12),
+      0 24px 70px -24px rgba(0,0,0,0.9),
+      0 0 120px -30px rgba(244,243,240,0.30),
+      0 0 260px -60px rgba(244,243,240,0.22);
+  }
+
   /* A flex column with `align-items:center` sizes its children to max-content,
      so `max-width:460px` overflows a 390px phone instead of wrapping. */
   main > * { max-width: 100% }
@@ -61,8 +69,12 @@
   <h1 style="margin:0;font-weight:600;font-size:clamp(30px,3.5vw,50px);line-height:1.05;letter-spacing:-0.035em;max-width:20ch;text-align:center;text-wrap:pretty">Deck in, brief out. The whole pre-call layer.</h1>
   <p style="margin:20px 0 0;font-size:15px;line-height:1.75;color:#8f8c85;max-width:460px;text-align:center">A recorded walkthrough of what hizen runs before a partner takes the call. Sound on — it's narrated.</p>
   <!-- no autoplay: browsers only permit it muted, and muting a narrated film removes the film -->
-  <video controls playsinline preload="metadata" poster="img/demo-poster.jpg"
-         style="width:100%;max-width:940px;margin-top:40px;border-radius:10px;border:1px solid rgba(244,243,240,0.14);background:#12120f;display:block;aspect-ratio:16/9">
+  <!-- The film is uniformly bright (luma ~233 throughout) because it is a screen
+       recording. Rather than fight that, it is lit like a screen: the halo lets it
+       emit into the page instead of sitting on it, the same falloff the vignette
+       and scrim use. -->
+  <video controls playsinline preload="metadata" poster="img/demo-poster.jpg" class="film"
+         style="width:100%;max-width:940px;margin-top:40px;border-radius:10px;background:#12120f;display:block;aspect-ratio:16/9">
     <source src="hizen-demo.mp4" type="video/mp4">
     <a href="hizen-demo.mp4">Download the demo film (MP4, 4.6 MB)</a>
   </video>
