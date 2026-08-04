@@ -1,39 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Static head, deliberately NOT the <helmet> block below: support.js hoists that one
-     at runtime, and link-preview crawlers (WhatsApp, Slack, iMessage, X) never run JS. -->
-<title>hızen.vc — intelligence for private capital</title>
-<meta name="description" content="An AI analyst for private capital. Sourcing, deal intake, founder research, diligence prep, IC prep — every operation between the partner and the founder, handled before the call.">
-<link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32-dark.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32-light.png" media="(prefers-color-scheme: dark)">
-<link rel="apple-touch-icon" href="/img/icon-180-dark.png">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="hizen.vc">
-<meta property="og:url" content="https://hizen.vc/">
-<meta property="og:title" content="hızen.vc — intelligence for private capital">
-<meta property="og:description" content="Everything an analyst runs before a deal — done, before the call.">
-<meta property="og:image" content="https://hizen.vc/img/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="hızen.vc — intelligence for private capital">
-<meta name="twitter:description" content="Everything an analyst runs before a deal — done, before the call.">
-<meta name="twitter:image" content="https://hizen.vc/img/og.png">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-  <title>hızen.vc - intelligence for private capital</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+<title>hızen.vc - intelligence for private capital</title>
+  <link rel="stylesheet" href="./fonts/fonts.css">
+  <script src="./vendor/gsap.min.js"></script>
+  <script src="./vendor/ScrollTrigger.min.js"></script>
+  <script src="./vendor/lenis.min.js"></script>
   <style>
     body{margin:0;background:#050505;color:#f4f3f0;-webkit-font-smoothing:antialiased;overflow-x:hidden}
     a{color:#f4f3f0}a:hover{color:#b5b2a8}
@@ -41,14 +15,36 @@
     @keyframes hzblink{0%,55%{opacity:1}56%,100%{opacity:0}}
     @media (prefers-reduced-motion: reduce){*{animation:none !important}}
   </style>
-</helmet>
-<div id="basebg" style="position:fixed;inset:0;overflow:hidden"><div id="baseimg" style="position:absolute;top:0;left:0;width:300vw;height:100%;display:flex;will-change:transform"><div style="width:100vw;height:100%;flex:0 0 auto;background-image:url('img/terrain-1.webp');background-size:cover;background-position:center;background-repeat:no-repeat"></div><div style="width:100vw;height:100%;flex:0 0 auto;background-image:url('img/terrain-1.webp');background-size:cover;background-position:center;background-repeat:no-repeat;transform:scaleX(-1)"></div><div style="width:100vw;height:100%;flex:0 0 auto;background-image:url('img/terrain-1.webp');background-size:cover;background-position:center;background-repeat:no-repeat"></div></div></div>
-<div id="spot" style="position:fixed;inset:0;pointer-events:none;overflow:hidden;-webkit-mask-image:radial-gradient(circle 260px at -999px -999px, black, transparent);mask-image:radial-gradient(circle 260px at -999px -999px, black, transparent)"><div id="spotimg" style="position:absolute;top:0;left:0;width:300vw;height:100%;display:flex;will-change:transform"><div style="width:100vw;height:100%;flex:0 0 auto;background-image:url('img/terrain-2.webp');background-size:cover;background-position:center;background-repeat:no-repeat"></div><div style="width:100vw;height:100%;flex:0 0 auto;background-image:url('img/terrain-2.webp');background-size:cover;background-position:center;background-repeat:no-repeat;transform:scaleX(-1)"></div><div style="width:100vw;height:100%;flex:0 0 auto;background-image:url('img/terrain-2.webp');background-size:cover;background-position:center;background-repeat:no-repeat"></div></div></div>
-<div id="scrim" style="position:fixed;left:0;right:0;bottom:0;height:36vh;pointer-events:none;background:linear-gradient(to top, rgba(3,3,3,0.72), rgba(3,3,3,0.35) 45%, transparent)"></div>
+<meta name="description" content="Everything an analyst runs before a deal — done, before the call.">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32-dark.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32-light.png" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="/img/icon-180-dark.png">
+<meta property="og:title" content="hızen.vc — intelligence for private capital">
+<meta property="og:description" content="Everything an analyst runs before a deal — done, before the call.">
+<meta property="og:image" content="https://hizen.vc/img/og.png">
+<meta property="og:url" content="https://hizen.vc/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="hızen.vc — intelligence for private capital">
+<meta name="twitter:description" content="Everything an analyst runs before a deal — done, before the call.">
+<meta name="twitter:image" content="https://hizen.vc/img/og.png">
+<style>
+  /* The builder writes hover intent as a `style-hover` attribute its own runtime
+     never reads, so these are the only place those states exist. */
+  .clink:hover { color: #b5b2a8 }
+  .cbtn:hover { background: #d9d6cd; color: #12120f }
+  :focus-visible { outline: 2px solid currentColor; outline-offset: 3px }
+</style>
+</head>
+<body>
+<div id="basebg" style="position:fixed;inset:0;overflow:hidden;background:#050505"><canvas id="baseimg" style="position:absolute;top:0;left:0;width:300vw;height:100%;will-change:transform"></canvas></div>
+<div id="spot" style="position:fixed;inset:0;pointer-events:none;overflow:hidden;-webkit-mask-image:radial-gradient(circle 260px at -999px -999px, black, transparent);mask-image:radial-gradient(circle 260px at -999px -999px, black, transparent)"><canvas id="spotimg" style="position:absolute;top:0;left:0;width:300vw;height:100%;image-rendering:pixelated;will-change:transform"></canvas></div>
+<div id="vig" style="position:fixed;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 42%, transparent 50%, rgba(0,0,0,0.5) 86%, rgba(0,0,0,0.68) 100%)"></div>
+<div id="scrim" style="position:fixed;left:0;right:0;bottom:0;height:30vh;pointer-events:none;background:linear-gradient(to top, rgba(3,3,3,0.6), rgba(3,3,3,0.22) 45%, transparent)"></div>
 <header style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:24px 7vw;pointer-events:none">
   <a href="#" id="logo" style="pointer-events:auto;font-family:'Space Grotesk',Inter,sans-serif;font-weight:500;font-size:20px;letter-spacing:0.005em;color:#f4f3f0;text-decoration:none;line-height:1">h<span style="position:relative;display:inline-block">ı<span style="position:absolute;left:50%;top:0.06em;transform:translateX(-50%);width:0.17em;height:0.17em;border-radius:50%;background:#8f8c85"></span></span>zen<span style="color:#8f8c85">.vc</span></a>
   <nav style="display:flex;align-items:center;gap:28px;pointer-events:auto">
-    <a href="mailto:hq@hizen.vc" class="clink" style="font-family:Inter,sans-serif;font-weight:500;font-size:12px;letter-spacing:0.05em;color:#f4f3f0;text-decoration:none;border-bottom:1px solid rgba(244,243,240,0.35);padding-bottom:3px;white-space:nowrap" style-hover="color:#b5b2a8">hq@hizen.vc</a>
+    <a href="mailto:hq@hizen.vc" class="clink" style="font-family:Inter,sans-serif;font-weight:500;font-size:12px;letter-spacing:0.05em;color:#f4f3f0;text-decoration:none;border-bottom:1px solid rgba(244,243,240,0.35);padding-bottom:3px;white-space:nowrap" style-hover="color:#b5b2a8">Contact us</a>
+    <a href="./contact.html" class="clink" style="font-family:Inter,sans-serif;font-weight:500;font-size:12px;letter-spacing:0.05em;color:#f4f3f0;text-decoration:none;border-bottom:1px solid rgba(244,243,240,0.35);padding-bottom:3px;white-space:nowrap" style-hover="color:#b5b2a8">Get in touch</a>
     <a href="./demo.html" class="cbtn" style="font-family:Inter,sans-serif;font-weight:500;font-size:12px;letter-spacing:0.05em;color:#12120f;background:#f4f3f0;padding:10px 20px;border-radius:999px;text-decoration:none;white-space:nowrap" style-hover="background:#d9d6cd;color:#12120f">See demo</a>
   </nav>
 </header>
@@ -131,7 +127,7 @@
           <p style="margin:0;font-family:Inter,sans-serif;font-weight:400;font-size:16px;line-height:1.7;color:rgba(244,243,240,0.94);text-shadow:0 1px 14px rgba(0,0,0,0.6)">A recorded walkthrough of the pre-call intelligence layer - or write to us and we'll show you live.</p>
           <div style="display:flex;align-items:center;gap:20px">
             <a href="./demo.html" class="cbtn" style="pointer-events:auto;font-family:Inter,sans-serif;font-weight:500;font-size:12px;letter-spacing:0.05em;color:#12120f;background:#f4f3f0;padding:11px 22px;border-radius:999px;text-decoration:none;white-space:nowrap" style-hover="background:#d9d6cd;color:#12120f">See the demo</a>
-            <a href="mailto:hq@hizen.vc" class="clink" style="pointer-events:auto;font-family:Inter,sans-serif;font-weight:500;font-size:13px;color:#f4f3f0;text-decoration:none;border-bottom:1px solid rgba(244,243,240,0.35);padding-bottom:3px;white-space:nowrap" style-hover="color:#b5b2a8">hq@hizen.vc</a>
+            <a href="./contact.html" class="clink" style="pointer-events:auto;font-family:Inter,sans-serif;font-weight:500;font-size:13px;color:#f4f3f0;text-decoration:none;border-bottom:1px solid rgba(244,243,240,0.35);padding-bottom:3px;white-space:nowrap" style-hover="color:#b5b2a8">Get in touch</a>
           </div>
         </div>
         <div id="legal" style="position:absolute;left:50%;transform:translateX(-50%);bottom:42px;z-index:2;font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:10px;letter-spacing:0.08em;color:rgba(244,243,240,0.55);white-space:nowrap">© 2026 hizen.vc · intelligence for private capital</div>
@@ -143,11 +139,8 @@
 <div id="tagline" style="position:fixed;left:50%;transform:translateX(-50%);bottom:20px;z-index:60;opacity:0;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:10.5px;letter-spacing:0.14em;color:rgba(244,243,240,0.6);white-space:nowrap;text-shadow:0 1px 10px rgba(0,0,0,0.6)">Automation is where it starts · Context is what compounds · Judgment is what it serves</div>
 <div id="prog" style="position:fixed;left:0;bottom:0;height:2px;width:0;background:#f4f3f0;z-index:60"></div>
 <div id="hint" style="position:fixed;right:7vw;bottom:24px;z-index:60;display:flex;align-items:center;gap:12px;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:10px;letter-spacing:0.3em;color:rgba(244,243,240,0.6)">SCROLL<span style="display:grid;grid-template-columns:repeat(2,4px);grid-template-rows:repeat(3,4px)"><span style="background:rgba(244,243,240,0.7)"></span><span></span><span></span><span style="background:rgba(244,243,240,0.7)"></span><span style="background:rgba(244,243,240,0.7)"></span><span></span></span></div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{
-  &quot;pace&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 84, &quot;min&quot;: 50, &quot;max&quot;: 160, &quot;step&quot;: 2, &quot;unit&quot;: &quot;vh&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Film&quot;},
-  &quot;snap&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Film&quot;}
-}">
+<script>
+class DCLogic { constructor(props) { this.props = props; } }
 class Component extends DCLogic {
   renderVals() { return {}; }
   componentDidMount() {
@@ -170,6 +163,7 @@ class Component extends DCLogic {
     ScrollTrigger.refresh();
   }
   componentWillUnmount() {
+    this._booted = false;
     cancelAnimationFrame(this._raf); cancelAnimationFrame(this._spotRaf);
     clearTimeout(this._readyGuard); clearTimeout(this._snapT); clearTimeout(this._snapClear);
     window.removeEventListener('mousemove', this._mm);
@@ -184,6 +178,7 @@ class Component extends DCLogic {
     const qs = new URLSearchParams(location.search);
     this.rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
     gsap.registerPlugin(ScrollTrigger);
+    this._drawAll();
     this.beats = Array.from(document.querySelectorAll('.beat')).map(el => ({
       el, in: +el.dataset.in, peak: +el.dataset.peak, out: +el.dataset.out,
       stmt: el.querySelector('.stmt'),
@@ -245,6 +240,7 @@ class Component extends DCLogic {
       ScrollTrigger.update();
     }
     (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(() => {
+      this._drawAll();
       requestAnimationFrame(() => requestAnimationFrame(() => { window.__ready = true; }));
     });
   }
@@ -253,6 +249,104 @@ class Component extends DCLogic {
     if (film) film.style.height = (100 + 5 * this.pace) + 'vh';
     const tag = document.getElementById('tagline');
     if (tag) tag.style.display = window.innerWidth < 1160 ? 'none' : '';
+    if (this._booted) this._drawAll();
+  }
+  _hash(x, y) { return ((((x * 73856093) ^ (y * 19349663)) >>> 0) % 1000) / 1000; }
+  _vineParams(s, H) {
+    return {
+      y0: H * (0.34 + 0.44 * this._hash(s, 1)),
+      a1: H * (0.05 + 0.09 * this._hash(s, 2)), f1: 0.0009 + 0.0011 * this._hash(s, 3), p1: 6.28 * this._hash(s, 4),
+      a2: H * (0.02 + 0.04 * this._hash(s, 5)), f2: 0.003 + 0.003 * this._hash(s, 6), p2: 6.28 * this._hash(s, 7)
+    };
+  }
+  _vineY(v, x) { return v.y0 + v.a1 * Math.sin(x * v.f1 + v.p1) + v.a2 * Math.sin(x * v.f2 + v.p2); }
+  _leaf(ctx, x, y, ang, len, a) {
+    ctx.save(); ctx.translate(x, y); ctx.rotate(ang);
+    const w = len * 0.38;
+    const g = ctx.createLinearGradient(0, 0, len, 0);
+    g.addColorStop(0, 'rgba(240,238,232,' + (a * 0.22).toFixed(3) + ')');
+    g.addColorStop(0.6, 'rgba(240,238,232,' + (a * 0.72).toFixed(3) + ')');
+    g.addColorStop(1, 'rgba(240,238,232,' + Math.min(1, a * 1.08).toFixed(3) + ')');
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.bezierCurveTo(len * 0.28, -w, len * 0.82, -w * 0.92, len, -w * 0.06);
+    ctx.bezierCurveTo(len * 0.82, w * 0.92, len * 0.28, w, 0, 0);
+    ctx.fill(); ctx.restore();
+  }
+  _daisy(ctx, x, y, R, spin, a) {
+    for (let k = 0; k < 8; k++) {
+      const h = this._hash(Math.round(x) + k, 71);
+      const ang = spin + (k / 8) * 6.2832 + (h - 0.5) * 0.55;
+      const len = R * (0.75 + 0.55 * h);
+      this._leaf(ctx, x + Math.cos(ang) * R * 0.1, y + Math.sin(ang) * R * 0.1, ang, len, a * (0.7 + 0.45 * h));
+    }
+    ctx.beginPath(); ctx.arc(x, y, R * 0.1, 0, 6.2832);
+    ctx.fillStyle = 'rgba(240,238,232,' + Math.min(1, a * 1.4).toFixed(3) + ')'; ctx.fill();
+  }
+  _drawVines(cv, full, k) {
+    const W = Math.min(6400, Math.round(window.innerWidth * 3));
+    const H = Math.max(420, window.innerHeight);
+    const pw = Math.round(W * k), ph = Math.round(H * k);
+    if (cv.width !== pw || cv.height !== ph) { cv.width = pw; cv.height = ph; }
+    const ctx = cv.getContext('2d');
+    ctx.setTransform(k, 0, 0, k, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+    const ink = a => 'rgba(240,238,232,' + Math.min(1, a).toFixed(3) + ')';
+    ctx.font = '10px "IBM Plex Mono", monospace';
+    const cell = 16;
+    for (let gx = 0; gx < W / cell; gx++) for (let gy = 0; gy < H / cell; gy++) {
+      const h = this._hash(gx + 7, gy + 3);
+      if (h > (full ? 0.92 : 0.66)) continue;
+      const a = full ? 0.2 + h * 0.5 : 0.07 + h * 0.11;
+      ctx.fillStyle = ink(a);
+      ctx.beginPath(); ctx.arc(gx * cell + cell / 2, gy * cell + cell / 2, full ? 1.3 + h * 1.7 : 1 + h * 1, 0, 6.2832); ctx.fill();
+    }
+    for (let s = 0; s < 10; s++) {
+      const v = this._vineParams(s, H);
+      ctx.beginPath(); ctx.moveTo(0, this._vineY(v, 0));
+      for (let x = 6; x <= W; x += 6) ctx.lineTo(x, this._vineY(v, x));
+      ctx.strokeStyle = ink(full ? 0.52 : 0.3); ctx.lineWidth = 1; ctx.stroke();
+      for (let x = 60; x < W - 30; x += 88) {
+        const h = this._hash(s * 97 + Math.round(x / 88), 11);
+        const y = this._vineY(v, x);
+        const tang = Math.atan2(this._vineY(v, x + 6) - this._vineY(v, x - 6), 12);
+        if (h < 0.28) {
+          if (full || h < 0.16) {
+            const side = h < 0.14 ? 1 : -1;
+            this._leaf(ctx, x, y, tang + side * (0.7 + 0.5 * this._hash(s, x)), 12 + 14 * this._hash(x, s), full ? 0.5 : 0.26);
+          }
+        } else if (h < 0.66) {
+          if (full || h < 0.55) {
+            const val = this._hash(Math.round(x / 7), s * 13 + 5).toFixed(2);
+            const side = h < 0.47 ? -1 : 1;
+            const nx = Math.cos(tang + 1.5708) * 8 * side, ny = Math.sin(tang + 1.5708) * 8 * side;
+            ctx.strokeStyle = ink(full ? 0.45 : 0.26); ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + nx * 0.7, y + ny * 0.7); ctx.stroke();
+            ctx.fillStyle = ink(full ? 0.82 : 0.4);
+            ctx.fillText(val, x + nx + (side < 0 ? -28 : 2), y + ny + 3.5);
+          }
+        } else if (h > 0.91) {
+          if (full) this._daisy(ctx, x, y, 15 + 11 * this._hash(x, 3), 6.28 * this._hash(x, 9), 0.62);
+          else {
+            ctx.beginPath(); ctx.arc(x, y, 2.4, 0, 6.2832); ctx.fillStyle = ink(0.4); ctx.fill();
+            this._leaf(ctx, x, y, -1.9, 9, 0.3); this._leaf(ctx, x, y, -1.2, 9, 0.3);
+          }
+        }
+      }
+    }
+    for (let i2 = 0; i2 < 70; i2++) {
+      if (!full && i2 % 3 !== 0) continue;
+      const px = this._hash(i2, 41) * W, py = this._hash(i2, 43) * H;
+      this._leaf(ctx, px, py, 6.28 * this._hash(i2, 47), 7 + 8 * this._hash(i2, 53), full ? 0.18 : 0.12);
+    }
+  }
+  _drawAll() {
+    const b = document.getElementById('baseimg'), s = document.getElementById('spotimg');
+    const W = Math.min(6400, Math.round(window.innerWidth * 3));
+    const dpr = Math.min(window.devicePixelRatio || 1, 2, 8000 / W);
+    if (b) this._drawVines(b, false, dpr);
+    if (s) this._drawVines(s, true, 0.5);
   }
   _progress(p) {
     this._lastP = p;
@@ -303,6 +397,7 @@ class Component extends DCLogic {
     this._snapClear = setTimeout(() => { this._snapping = false; }, 850);
   }
 }
+new Component({"pace": 84, "snap": true}).componentDidMount();
 </script>
 </body>
 </html>
