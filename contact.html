@@ -23,6 +23,10 @@
     .f option{background:#12120f;color:#f4f3f0}
     .f .opt{text-transform:none;letter-spacing:0;font-size:10px;color:rgba(244,243,240,0.34)}
     button[disabled]{opacity:0.5;cursor:default}
+    /* The UA's `[hidden]{display:none}` loses to ANY display declaration, and
+       the form carries an inline `display:flex` — so setting .hidden left it
+       on screen beside the confirmation panel. */
+    [hidden]{display:none !important}
   </style>
 <meta name="description" content="Everything an analyst runs before a deal — done, before the call.">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32-dark.png">
