@@ -29,6 +29,26 @@
   .clink:hover { color: #b5b2a8 }
   .cbtn:hover { background: #d9d6cd; color: #12120f }
   :focus-visible { outline: 2px solid currentColor; outline-offset: 3px }
+
+  /* A flex column with `align-items:center` sizes its children to max-content,
+     so the headline spans and the copy blocks never wrap — they overflow the
+     5vw padding and `overflow-x:hidden` clips them. This is the whole mobile
+     bug on every page; it is not width-specific, so it is not in a query. */
+  .stmt > *, main > * { max-width: 100% }
+
+  @media (max-width: 640px) {
+    header { padding-left: 5vw !important; padding-right: 5vw !important }
+    header nav { gap: 14px !important }
+    /* "Get in touch" reaches the same inbox and the row cannot hold both */
+    header nav a[href^="mailto:"] { display: none !important }
+    .rv { max-width: 100% !important }
+    .stmt { padding: 0 6vw !important }
+    .stmt > * { font-size: clamp(26px, 7.4vw, 40px) !important; letter-spacing: -0.04em !important }
+    /* grid and flex children default to min-width:auto, so an input's default
+       size keeps two columns wider than the screen instead of collapsing */
+    [style*="grid-template-columns"] { grid-template-columns: 1fr !important }
+    input, textarea { min-width: 0 !important; width: 100% !important }
+  }
 </style>
 </head>
 <body>

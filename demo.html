@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>hızen.vc — demo</title>
-<meta name="description" content="A two-minute recorded walkthrough of the pre-call intelligence layer: deck in, brief out.">
+<meta name="description" content="A ninety-second recorded walkthrough of the pre-call intelligence layer: deck in, brief out.">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32-dark.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32-light.png" media="(prefers-color-scheme: dark)">
 <link rel="apple-touch-icon" href="/img/icon-180-dark.png">
@@ -12,52 +12,93 @@
 <meta property="og:site_name" content="hizen.vc">
 <meta property="og:url" content="https://hizen.vc/demo.html">
 <meta property="og:title" content="hızen.vc — demo">
-<meta property="og:description" content="Deck in, brief out. The whole pre-call layer, in two minutes.">
+<meta property="og:description" content="Deck in, brief out. The whole pre-call layer, in ninety seconds.">
 <meta property="og:image" content="https://hizen.vc/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="hızen.vc — demo">
-<meta name="twitter:description" content="Deck in, brief out. The whole pre-call layer, in two minutes.">
+<meta name="twitter:description" content="Deck in, brief out. The whole pre-call layer, in ninety seconds.">
 <meta name="twitter:image" content="https://hizen.vc/img/og.png">
 <!-- Plain static page on purpose. The dc-runtime re-renders markup through React,
      which strips <video>'s valueless attributes (controls/playsinline) and its
      <source> child, leaving a dead player. This page had no logic to run anyway. -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./fonts/fonts.css">
+<script src="./backdrop.js"></script>
 <style>
-  body{margin:0;background:#fcfbf8;color:#12120f;-webkit-font-smoothing:antialiased;font-family:Inter,sans-serif}
-  a{color:#12120f}
-  ::selection{background:#12120f;color:#fcfbf8}
-  .clink{font-weight:500;color:#12120f;text-decoration:none;border-bottom:1px solid #dbd8cf;padding-bottom:3px}
-  .clink:hover{color:#75736c}
-  .cbtn{font-weight:500;font-size:12px;letter-spacing:0.05em;color:#fcfbf8;background:#12120f;padding:11px 22px;border-radius:999px;text-decoration:none}
-  .cbtn:hover{background:#33312a}
+  body{margin:0;background:#050505;color:#f4f3f0;-webkit-font-smoothing:antialiased;font-family:Inter,sans-serif}
+  a{color:#f4f3f0}
+  ::selection{background:#f4f3f0;color:#12120f}
+  .clink{font-weight:500;color:#f4f3f0;text-decoration:none;border-bottom:1px solid rgba(244,243,240,0.35);padding-bottom:3px}
+  .clink:hover{color:#b5b2a8}
+  .cbtn{font-weight:500;font-size:12px;letter-spacing:0.05em;color:#12120f;background:#f4f3f0;padding:11px 22px;border-radius:999px;text-decoration:none}
+  .cbtn:hover{background:#d9d6cd}
+  :focus-visible{outline:2px solid currentColor;outline-offset:3px}
+
+  /* A flex column with `align-items:center` sizes its children to max-content,
+     so `max-width:460px` overflows a 390px phone instead of wrapping. */
+  main > * { max-width: 100% }
+  @media (max-width: 640px) {
+    header { padding-left: 5vw !important; padding-right: 5vw !important }
+    main { padding-left: 5vw !important; padding-right: 5vw !important }
+  }
 </style>
 </head>
 <body>
+<!-- the same backdrop the landing page draws, from the same generated renderer -->
+<div id="basebg" style="position:fixed;inset:0;overflow:hidden;background:#050505"><canvas id="baseimg" style="position:absolute;top:0;left:0;width:300vw;height:100%"></canvas></div>
+<div id="spot" style="position:fixed;inset:0;pointer-events:none;overflow:hidden;-webkit-mask-image:radial-gradient(circle 260px at -999px -999px, black, transparent);mask-image:radial-gradient(circle 260px at -999px -999px, black, transparent)"><canvas id="spotimg" style="position:absolute;top:0;left:0;width:300vw;height:100%;image-rendering:pixelated"></canvas></div>
+<div id="vig" style="position:fixed;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 42%, transparent 50%, rgba(0,0,0,0.5) 86%, rgba(0,0,0,0.68) 100%)"></div>
+<div id="scrim" style="position:fixed;left:0;right:0;bottom:0;height:30vh;pointer-events:none;background:linear-gradient(to top, rgba(3,3,3,0.6), rgba(3,3,3,0.22) 45%, transparent)"></div>
 <header style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:24px 7vw;pointer-events:none">
-  <a href="./index.html" style="pointer-events:auto;font-family:'Space Grotesk',Inter,sans-serif;font-weight:500;font-size:20px;letter-spacing:0.005em;color:#12120f;text-decoration:none;line-height:1">h<span style="position:relative;display:inline-block">ı<span style="position:absolute;left:50%;top:0.06em;transform:translateX(-50%);width:0.17em;height:0.17em;border-radius:50%;background:#a9a69e"></span></span>zen<span style="color:#a9a69e">.vc</span></a>
+  <a href="./index.html" style="pointer-events:auto;font-family:'Space Grotesk',Inter,sans-serif;font-weight:500;font-size:20px;letter-spacing:0.005em;color:#f4f3f0;text-decoration:none;line-height:1">h<span style="position:relative;display:inline-block">ı<span style="position:absolute;left:50%;top:0.06em;transform:translateX(-50%);width:0.17em;height:0.17em;border-radius:50%;background:#8f8c85"></span></span>zen<span style="color:#8f8c85">.vc</span></a>
   <nav style="display:flex;align-items:center;gap:28px;pointer-events:auto">
     <a href="mailto:hq@hizen.vc" class="clink" style="font-size:12px;letter-spacing:0.05em">Contact us</a>
   </nav>
 </header>
-<main style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:15vh 7vw 10vh;box-sizing:border-box">
-  <div style="display:flex;gap:12px;align-items:baseline;font-weight:600;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px"><span style="color:#b5b2a8">Demo</span>1 min 59 sec</div>
+<main style="position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:15vh 7vw 10vh;box-sizing:border-box">
+  <div style="display:flex;gap:12px;align-items:baseline;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:22px;color:rgba(244,243,240,0.62)"><span>Demo</span>1 min 30 sec</div>
   <h1 style="margin:0;font-weight:600;font-size:clamp(30px,3.5vw,50px);line-height:1.05;letter-spacing:-0.035em;max-width:20ch;text-align:center;text-wrap:pretty">Deck in, brief out. The whole pre-call layer.</h1>
-  <p style="margin:20px 0 0;font-size:15px;line-height:1.75;color:#605e57;max-width:460px;text-align:center">A recorded walkthrough of what hizen runs before a partner takes the call. Sound on — it's narrated.</p>
+  <p style="margin:20px 0 0;font-size:15px;line-height:1.75;color:#8f8c85;max-width:460px;text-align:center">A recorded walkthrough of what hizen runs before a partner takes the call. Sound on — it's narrated.</p>
   <!-- no autoplay: browsers only permit it muted, and muting a narrated film removes the film -->
   <video controls playsinline preload="metadata" poster="img/demo-poster.jpg"
-         style="width:100%;max-width:940px;margin-top:40px;border-radius:10px;border:1px solid #e4e1d8;background:#eeede9;display:block;aspect-ratio:16/9">
+         style="width:100%;max-width:940px;margin-top:40px;border-radius:10px;border:1px solid rgba(244,243,240,0.14);background:#12120f;display:block;aspect-ratio:16/9">
     <source src="hizen-demo.mp4" type="video/mp4">
-    <a href="hizen-demo.mp4">Download the demo film (MP4, 11 MB)</a>
+    <a href="hizen-demo.mp4">Download the demo film (MP4, 4.6 MB)</a>
   </video>
   <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:22px;margin-top:36px">
-    <a href="mailto:hq@hizen.vc" class="cbtn">Book a live walkthrough</a>
+    <a href="https://form.typeform.com/to/vV9elPB1" class="cbtn" target="_blank" rel="noopener">Book a live walkthrough</a>
     <a href="./index.html" class="clink" style="font-size:13px">Back to site</a>
   </div>
-  <div style="margin-top:56px;font-size:11px;letter-spacing:0.08em;color:#aaa79d">© 2026 hizen.vc · intelligence for private capital</div>
+  <div style="margin-top:56px;font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:10px;letter-spacing:0.08em;color:rgba(244,243,240,0.42)">© 2026 hizen.vc · intelligence for private capital</div>
 </main>
+<script>
+(() => {
+  const base = document.getElementById('baseimg'), spotc = document.getElementById('spotimg');
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const draw = () => {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2, 8000 / Math.min(6400, window.innerWidth * 3));
+    HizenBackdrop._drawVines(base, false, dpr);
+    HizenBackdrop._drawVines(spotc, true, 0.5);
+  };
+  draw();
+  let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(draw, 200); });
+
+  const spot = document.getElementById('spot');
+  if (still) return;
+  const m = { x: -999, y: -999 }, sm = { x: -999, y: -999 };
+  addEventListener('mousemove', e => {
+    if (m.x < -500) { sm.x = e.clientX; sm.y = e.clientY; }
+    m.x = e.clientX; m.y = e.clientY;
+  }, { passive: true });
+  (function loop() {
+    sm.x += (m.x - sm.x) * 0.1; sm.y += (m.y - sm.y) * 0.1;
+    const g = 'radial-gradient(circle 260px at ' + sm.x.toFixed(1) + 'px ' + sm.y.toFixed(1) +
+      'px, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.75) 60%, rgba(0,0,0,0.4) 75%, rgba(0,0,0,0.12) 88%, transparent 100%)';
+    spot.style.webkitMaskImage = g; spot.style.maskImage = g;
+    requestAnimationFrame(loop);
+  })();
+})();
+</script>
 </body>
 </html>
