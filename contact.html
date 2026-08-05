@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Get in touch — hızen.vc</title>
+<title>Get in touch · hızen.vc</title>
   <link rel="stylesheet" href="./fonts/fonts.css">
   <style>
     body{margin:0;background:#050505;color:#f4f3f0;-webkit-font-smoothing:antialiased}
@@ -28,17 +28,17 @@
        on screen beside the confirmation panel. */
     [hidden]{display:none !important}
   </style>
-<meta name="description" content="Everything an analyst runs before a deal — done, before the call.">
+<meta name="description" content="Everything an analyst runs before a deal, done before the call.">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32-dark.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32-light.png" media="(prefers-color-scheme: dark)">
 <link rel="apple-touch-icon" href="/img/icon-180-dark.png">
-<meta property="og:title" content="hızen.vc — intelligence for private capital">
-<meta property="og:description" content="Everything an analyst runs before a deal — done, before the call.">
+<meta property="og:title" content="hızen.vc · intelligence for private capital">
+<meta property="og:description" content="Everything an analyst runs before a deal, done before the call.">
 <meta property="og:image" content="https://hizen.vc/img/og.png">
 <meta property="og:url" content="https://hizen.vc/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="hızen.vc — intelligence for private capital">
-<meta name="twitter:description" content="Everything an analyst runs before a deal — done, before the call.">
+<meta name="twitter:title" content="hızen.vc · intelligence for private capital">
+<meta name="twitter:description" content="Everything an analyst runs before a deal, done before the call.">
 <meta name="twitter:image" content="https://hizen.vc/img/og.png">
 <style>
   /* The builder writes hover intent as a `style-hover` attribute its own runtime
@@ -88,7 +88,7 @@
   <div style="width:min(560px,100%)">
     <div style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(244,243,240,0.5);margin-bottom:16px">+ Contact</div>
     <h1 style="margin:0;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-0.04em;color:#ffffff">Get in touch.</h1>
-    <p style="margin:20px 0 0;font-family:Inter,sans-serif;font-weight:400;font-size:15px;line-height:1.7;color:rgba(244,243,240,0.78)">Tell us about your fund and we'll come back within a day - or write to us directly at <a href="mailto:hq@hizen.vc" style="font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#f4f3f0;text-decoration:none;border-bottom:1px solid rgba(244,243,240,0.35);padding-bottom:2px" style-hover="color:#b5b2a8">hq@hizen.vc</a></p>
+    <p id="gi-intro" style="margin:20px 0 0;font-family:Inter,sans-serif;font-weight:400;font-size:15px;line-height:1.7;color:rgba(244,243,240,0.78)">Tell us about your fund and we'll come back within a day. Or write to us directly at <a href="mailto:hq@hizen.vc" style="font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#f4f3f0;text-decoration:none;border-bottom:1px solid rgba(244,243,240,0.35);padding-bottom:2px" style-hover="color:#b5b2a8">hq@hizen.vc</a></p>
     <form id="gi" style="margin-top:44px;display:flex;flex-direction:column;gap:30px">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px">
         <label class="f">Name
@@ -136,8 +136,8 @@
          on a phone, where the button is often the last thing on screen. -->
     <div id="gi-done" hidden style="margin-top:44px">
       <div style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(244,243,240,0.5)">+ Received</div>
-      <p style="margin:16px 0 0;font-family:Inter,sans-serif;font-size:18px;line-height:1.6;color:#f4f3f0">Thank you — we have your details.</p>
-      <p style="margin:10px 0 0;font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:rgba(244,243,240,0.7)">We come back within a day. In the meantime, the <a href="./demo.html" class="clink">demo film</a> runs 1:16.</p>
+      <p style="margin:16px 0 0;font-family:Inter,sans-serif;font-size:18px;line-height:1.6;color:#f4f3f0">Thank you. We have your details.</p>
+      <p style="margin:10px 0 0;font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:rgba(244,243,240,0.7)">We come back within a day. In the meantime, please see the demo film <a href="./demo.html" class="clink">here</a>.</p>
     </div>
   </div>
 </main>
@@ -209,7 +209,11 @@ const TIMEOUT = 20000; // a hung request must end in a message, never a spinner
       // reported "Got it" for a submission the server had thrown away.
       const result = await reply.json();
       if (result.error) throw new Error(result.error);
+      // The intro invites you to get in touch and promises a reply within a
+      // day. Left up, it sits directly above the confirmation making the same
+      // promise — which reads as a page that did not update.
       form.hidden = true;
+      document.getElementById('gi-intro').hidden = true;
       done.hidden = false;
       done.scrollIntoView({ block: 'center', behavior: 'smooth' });
     } catch (failure) {
