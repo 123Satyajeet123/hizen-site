@@ -125,8 +125,11 @@
       <label class="f">Email
         <input name="email" type="email" autocomplete="email" required maxlength="200">
       </label>
-      <!-- Bots fill every field they can see; a human never sees this one. -->
-      <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      <!-- Bots fill every field they can see; a human never sees this one.
+           NOT named "website": that is an autofill-recognised token, so Chrome
+           and Brave filled it for real people and their leads were dropped as
+           bot traffic. The name has to mean nothing to anybody. -->
+      <input name="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <div style="display:flex;align-items:center;gap:22px;margin-top:6px">
         <button type="submit" style="font-family:Inter,sans-serif;font-weight:500;font-size:12px;letter-spacing:0.05em;color:#12120f;background:#f4f3f0;padding:12px 26px;border-radius:999px;border:none;cursor:pointer" style-hover="background:#d9d6cd">Send</button>
         <span id="gi-note" role="status" style="font-family:Inter,sans-serif;font-style:italic;font-size:12.5px;color:rgba(244,243,240,0.45)">We read every one of these.</span>
@@ -209,6 +212,10 @@ const TIMEOUT = 20000; // a hung request must end in a message, never a spinner
       // reported "Got it" for a submission the server had thrown away.
       const result = await reply.json();
       if (result.error) throw new Error(result.error);
+      // A real write echoes back what the sheet stored. Anything else claiming
+      // success wrote nothing, and saying "thank you" to that loses the lead in
+      // silence — which is exactly how the honeypot swallowed real people.
+      if (!result.stored) throw new Error('accepted but not stored');
       // The intro invites you to get in touch and promises a reply within a
       // day. Left up, it sits directly above the confirmation making the same
       // promise — which reads as a page that did not update.
